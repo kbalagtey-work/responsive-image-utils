@@ -9,7 +9,10 @@ import Sizes from '../interface/Sizes'
  * @returns Number array of generated image sizes
  *
  */
-export default function(sizes: Sizes, mediaQueries: MediaQueries = MediaQueriesDefault): number[] {
+export default function getSrcsetSizes(
+  sizes: Sizes,
+  mediaQueries: MediaQueries = MediaQueriesDefault
+): number[] {
   let prevSize = '100vw'
   const getSizePerMediaQuery = Object.keys(mediaQueries).map((key: string) => {
     const currentSize = sizes[key] ? sizes[key] : prevSize

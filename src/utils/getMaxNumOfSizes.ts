@@ -7,7 +7,7 @@
  * @returns Number array of generated image sizes
  *
  */
-export default function(sizesArr: number[], max: number): number[] {
+export default function getMaxNumOfSizes(sizesArr: number[], max: number): number[] {
   if (max > sizesArr.length) {
     throw new Error('Max is greater than sizes length!')
   }

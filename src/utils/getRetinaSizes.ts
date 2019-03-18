@@ -6,7 +6,7 @@
  * @returns Number array of generated image sizes
  *
  */
-export default function(sizesArr: number[], ...multiplier: number[]): number[] {
+export default function getRetinaSizes(sizesArr: number[], ...multiplier: number[]): number[] {
   const newSizes = multiplier
     .map(n => sizesArr.slice(0).map(size => size * n))
     .reduce((prev, curr) => [...prev, ...curr], sizesArr)
