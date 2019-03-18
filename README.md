@@ -65,7 +65,7 @@ let exampleImage = generateImage('image-name', {s: '50vw', l: '25vw'});
 `exampleImage` will be a string with the following output
 
 ```js
-<img src="https://images.site.com/image-name?width=480" srcset="https://images.site.com/image-name?width=480, https://images.site.com/image-name?width=640, https://images.site.com/image-name?width=1024, https://images.site.com/image-name?width=1440, https://images.site.com/image-name?width=1920" sizes="(min-width:1025px) 25vw, 50vw" alt="" />
+<img src="https://images.site.com/image-name?width=480" srcset="https://images.site.com/image-name?width=480 480w, https://images.site.com/image-name?width=640 640w, https://images.site.com/image-name?width=1024 1024w, https://images.site.com/image-name?width=1440 1440w, https://images.site.com/image-name?width=1920 1920w" sizes="(min-width:1025px) 25vw, 50vw" alt="" />
 ```
 
 ### Step by step example
@@ -98,22 +98,22 @@ This allows you to build your image URLs by convention like so
 
 ```js
 const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
-const srcsetURLs = srcsetSizes.map(size => `https://images.site.com/image-name?width=${size}`).join(', ');
+const srcsetURLs = srcsetSizes.map(size => `https://images.site.com/image-name?width=${size} ${size}w`).join(', ');
 ```
 
 
 `srcsetURLs` will generate the following values
 
 ```js
-https://images.site.com/image-name?width=320,
-https://images.site.com/image-name?width=512,
-https://images.site.com/image-name?width=480,
-https://images.site.com/image-name?width=640
+https://images.site.com/image-name?width=320 320w,
+https://images.site.com/image-name?width=512 512w,
+https://images.site.com/image-name?width=480 480w,
+https://images.site.com/image-name?width=640 640w
 ```
 
 Using the code snippet above, you can then autogenerate your `src` and `srcsets` for your `<img />` tag
 ```js
-<img src="https://images.site.com/image-name?width=320" srcset="https://images.site.com/image-name?width=320, https://images.site.com/image-name?width=480, https://images.site.com/image-name?width=512, https://images.site.com/image-name?width=640" alt="" />
+<img src="https://images.site.com/image-name?width=320" srcset="https://images.site.com/image-name?width=320 320w, https://images.site.com/image-name?width=480 480w, https://images.site.com/image-name?width=512 512w, https://images.site.com/image-name?width=640 640w" alt="" />
 ```
 
 Cool huh?
@@ -122,12 +122,12 @@ Cool huh?
 ```js
 const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
 const srcsetSizesWithRetina = getRetinaSizes(srcsetSizes, 2, 3); // generate 2x and 3x
-const srcsetURLs = srcsetSizesWithRetina.map(size => `https://images.site.com/image-name?width=${size}`).join(', ');
+const srcsetURLs = srcsetSizesWithRetina.map(size => `https://images.site.com/image-name?width=${size} ${size}w`).join(', ');
 ```
 
 Using the code snippet above, your `<img />` tag will like this
 ```js
-<img src="https://images.site.com/image-name?width=320" srcset="https://images.site.com/image-name?width=320, https://images.site.com/image-name?width=480, https://images.site.com/image-name?width=512, https://images.site.com/image-name?width=640, https://images.site.com/image-name?width=960, https://images.site.com/image-name?width=1024, https://images.site.com/image-name?width=1280, https://images.site.com/image-name?width=1440, https://images.site.com/image-name?width=1536, https://images.site.com/image-name?width=1920" alt="" />
+<img src="https://images.site.com/image-name?width=320" srcset="https://images.site.com/image-name?width=320 320w, https://images.site.com/image-name?width=480 480w, https://images.site.com/image-name?width=512 512w, https://images.site.com/image-name?width=640 640w, https://images.site.com/image-name?width=960 960w, https://images.site.com/image-name?width=1024 1024w, https://images.site.com/image-name?width=1280 1280w, https://images.site.com/image-name?width=1440 1440w, https://images.site.com/image-name?width=1536 1536w, https://images.site.com/image-name?width=1920 1920w" alt="" />
 ```
 
 ### Is there a way to limit the results?
@@ -137,12 +137,12 @@ You can use *getMaxNumOfSizes* which will take N results from the set without th
 const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
 // generate 2x and 3x and limit results to 5
 const srcsetSizesWithRetina = getMaxNumOfSizes(getRetinaSizes(srcsetSizes, 2, 3), 5);
-const srcsetURLs = srcsetSizesWithRetina.map(size => `https://images.site.com/image-name?width=${size}`).join(', ');
+const srcsetURLs = srcsetSizesWithRetina.map(size => `https://images.site.com/image-name?width=${size} ${size}w`).join(', ');
 ```
 
 Using the code snippet above, your `<img />` tag will like this
 ```js
-<img src="https://images.site.com/image-name?width=480" srcset="https://images.site.com/image-name?width=480, https://images.site.com/image-name?width=640, https://images.site.com/image-name?width=1024, https://images.site.com/image-name?width=1440, https://images.site.com/image-name?width=1920" alt="" />
+<img src="https://images.site.com/image-name?width=480" srcset="https://images.site.com/image-name?width=480 480w, https://images.site.com/image-name?width=640 640w, https://images.site.com/image-name?width=1024 1024w, https://images.site.com/image-name?width=1440 1440w, https://images.site.com/image-name?width=1920 1920w" alt="" />
 ```
 
 ### Autogenerate the size attribute
