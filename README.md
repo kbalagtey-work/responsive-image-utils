@@ -3,7 +3,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kbalagtey-tacit/responsive-image-utils.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/kbalagtey-tacit/responsive-image-utils.svg)](https://travis-ci.org/kbalagtey-tacit/responsive-image-utils)
-[![Coveralls](https://img.shields.io/coveralls/kbalagtey-tacit/responsive-image-utils.svg)](https://coveralls.io/github/kbalagtey-tacit/responsive-image-utils)
+[![Coverage Status](https://coveralls.io/repos/github/kbalagtey-tacit/responsive-image-utils/badge.svg)](https://coveralls.io/github/kbalagtey-tacit/responsive-image-utils)
 [![Dev Dependencies](https://david-dm.org/kbalagtey-tacit/responsive-image-utils/dev-status.svg)](https://david-dm.org/kbalagtey-tacit/responsive-image-utils?type=dev)
 
 Utility functions to make it easier to work with auto generated responsive images for better performance optimised images.
