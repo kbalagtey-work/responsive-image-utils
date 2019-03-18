@@ -1,8 +1,13 @@
 {
   "name": "responsive-image-utils",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "responsive image",
+    "img",
+    "sizes",
+    "srcsets"
+  ],
   "main": "dist/responsive-image-utils.umd.js",
   "module": "dist/responsive-image-utils.es5.js",
   "typings": "dist/types/responsive-image-utils.d.ts",
@@ -12,7 +17,7 @@
   "author": "Kane Balagtey <kbalagtey@tacitknowledge.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:kbalagtey-tacit/responsive-image-utils.git"
+    "url": "https://github.com/kbalagtey-tacit/responsive-image-utils.git"
   },
   "license": "MIT",
   "engines": {
@@ -32,7 +37,9 @@
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
