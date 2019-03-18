@@ -12,7 +12,7 @@
   "author": "Kane Balagtey <kbalagtey@tacitknowledge.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:kbalagtey-tacit/responsive-image-utils.git"
   },
   "license": "MIT",
   "engines": {
