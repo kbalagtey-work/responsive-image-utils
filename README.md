@@ -159,6 +159,8 @@ It will produce a set that will look like this
 ['(min-width:1025px) 25vw', '50vw']
 ```
 
+For more technical documentation, please visit https://kbalagtey-tacit.github.io/responsive-image-utils/
+
 ### NPM scripts
 
  - `npm t`: Run test suite
