@@ -8,13 +8,27 @@
 
 Utility functions to make it easier to work with auto generated responsive images for better performance optimised images.
 
-### Usage
+### How it works?
+Please spend some time to read the following links which I think explains the concept of responsive images pretty well.
+
+* https://ericportis.com/posts/2014/srcset-sizes/#part-2
+* https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+### ES6 Usage
 ```js
 npm install -D responsive-image-utils
 ```
 
-Demo - https://codesandbox.io/s/1z15pnyk5j
+ES6 Demo - https://codesandbox.io/s/1z15pnyk5j
 
+### ES5 Usage
+Add the following script tag to your project
+
+```js
+<script src="https://unpkg.com/responsive-image-utils/dist/responsive-image-utils.umd.js"></script>
+```
+
+ES5 Demo - https://jsfiddle.net/ikanedo/8h7nz15g/
 
 ### Usage example
 ```js
@@ -36,11 +50,12 @@ const generateImage = (id, imgSizes, alt = '') => {
 
 	const srcsetSizes = getSrcsetSizes(imgSizes, mediaQueries);
 	const srcsetSizesWithRetina = getRetinaSizes(srcsetSizes, 2, 3);
+	const defaultSrc = `https://i1.adis.ws/i/playground/${id}?w=${srcsetSizes[0]}`;
 	const srcsetURLs = getMaxNumOfSizes(srcsetSizesWithRetina, 5)
-		.map(size => `https://images.site.com/${id}?width=${size}`);
+		.map(size => `https://images.site.com/${id}?width=${size} ${size}w`);
 	const sizesStr = getImgSizeStrings(imgSizes, mediaQueries).join(', ');
 
-	return `<img src="${srcsetURLs[0]}" srcset="${srcsetURLs.join(', ')}" sizes="${sizesStr}" alt="${alt}" />`;
+	return `<img src="${defaultSrc}" srcset="${srcsetURLs.join(', ')}" sizes="${sizesStr}" alt="${alt}" />`;
 }
 
 let exampleImage = generateImage('image-name', {s: '50vw', l: '25vw'});
@@ -168,6 +183,7 @@ It will produce a set that will look like this
 ```
 
 For more technical documentation, please visit https://kbalagtey-tacit.github.io/responsive-image-utils/
+
 
 ### NPM scripts
 
