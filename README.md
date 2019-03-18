@@ -8,6 +8,14 @@
 
 Utility functions to make it easier to work with auto generated responsive images for better performance optimised images.
 
+### Usage
+```js
+npm install -D responsive-image-utils
+```
+
+Demo - https://codesandbox.io/s/1z15pnyk5j
+
+
 ### Usage example
 ```js
 import {
