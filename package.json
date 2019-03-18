@@ -4,9 +4,11 @@
   "description": "",
   "keywords": [
     "responsive image",
-    "img",
     "sizes",
-    "srcsets"
+    "srcsets",
+    "breakpoint generator",
+    "sizes generator",
+    "srcset generator"
   ],
   "main": "dist/responsive-image-utils.umd.js",
   "module": "dist/responsive-image-utils.es5.js",

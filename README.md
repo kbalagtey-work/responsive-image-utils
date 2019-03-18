@@ -8,6 +8,10 @@ Utility functions to make it easier to work with auto generated responsive image
 [![Coverage Status](https://coveralls.io/repos/github/kbalagtey-tacit/responsive-image-utils/badge.svg)](https://coveralls.io/github/kbalagtey-tacit/responsive-image-utils)
 [![Dev Dependencies](https://david-dm.org/kbalagtey-tacit/responsive-image-utils/dev-status.svg)](https://david-dm.org/kbalagtey-tacit/responsive-image-utils?type=dev)
 
+### Overview
+Use this utility lib to generate image srcsets and sizes used for responsive web design using a mobile-first approach.
+
+This project is a lightweight utils version of **[Responsive Image Breakpoints Generator](https://www.responsivebreakpoints.com/)**.
 
 ### How it works?
 Please spend some time to read the following links which I think explains the concept of responsive images pretty well.
@@ -161,7 +165,7 @@ const mediaQueries = {
 const sizesStr = getImgSizeStrings({s: '50vw', m: '50vw', l: '25vw', xl: '25vw', xxl: '25vw'}, mediaQueries);
 ```
 
-It will produce a set that will look like this
+`sizesStr` will produce a set that will look like this
 ```js
 ['(min-width:1921px) 25vw', '(min-width:1281px) 25vw', '(min-width:1025px) 25vw', '(min-width:641px) 50vw', '50vw']
 ```
@@ -178,7 +182,7 @@ const mediaQueries = {
 const sizesStr = getImgSizeStrings({s: '50vw' l: '25vw'}, mediaQueries);
 ```
 
-It will produce a set that will look like this
+`sizesStr` will produce a set that will look like this
 ```js
 ['(min-width:1025px) 25vw', '50vw']
 ```
