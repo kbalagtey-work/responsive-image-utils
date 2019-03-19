@@ -161,15 +161,3 @@ const sizesStr = getImgSizeStrings({s: '50vw' l: '25vw'}, mediaQueries);
 
 For more technical documentation, please visit https://kbalagtey-tacit.github.io/responsive-image-utils/
 
-
-### NPM scripts
-
- - `npm t`: Run test suite
- - `npm start`: Run `npm run build` in watch mode
- - `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
- - `npm run test:prod`: Run linting and generate coverage
- - `npm run build`: Generate bundles and typings, create docs
- - `npm run lint`: Lints code
- - `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind are welcome!
