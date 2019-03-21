@@ -109,11 +109,21 @@ Using the code snippet above, your `<img />` tag will like this
 
 ### Is there a way to limit the results?
 
-You can use *getMaxNumOfSizes* which will take N results from the set without the sizes being too close to each other
+You can use *getSizesWithInterval* which will take N results from the set without the sizes being too close to each other. For example, if you have the following sizes `[300, 320, 460, 480, 1024]`, you might want to remove `300` & `460` since the 20px difference with the next size up has a bigger performance cost with page weight over the cost of serving a bigger image size. In this case you can do the following
+
 ```js
 const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
 // generate 2x and 3x and limit results to 5
-const srcsetSizesWithRetina = getMaxNumOfSizes(getRetinaSizes(srcsetSizes, 2, 3), 5);
+const srcsetSizesWithRetina = getSizesWithInterval(getRetinaSizes(srcsetSizes, 2, 3), 20);
+const srcsetURLs = srcsetSizesWithRetina.map(size => `https://res.cloudinary.com/demo/image/upload/w_${size}/${id} ${size}w`).join(', ');
+```
+
+You can also use *getMaxNumOfSizes* which will take N results from the set if you want to limit the number of sizes. The logic will start from the largest size, taking every *N* size according to the number of sizes available and the number of sizes wanted. For example, a set of `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` where you only want `5` sizes will return the following set [2, 4, 6, 8, 10]. If there is no equal distribution (say you want 7 of 10) then it will prefer the smaller sizes and return the following set `[1, 2, 3, 4, 6, 8, 10]`. Why? because there are more variation in mobile sizes where a more accurate sizing is more beneficial.
+
+```js
+const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
+// generate 2x and 3x and limit results to 5
+const srcsetSizesWithRetina = getMaxNumOfSizes(getSizesWithInterval(getRetinaSizes(srcsetSizes, 2, 3), 20), 5);
 const srcsetURLs = srcsetSizesWithRetina.map(size => `https://res.cloudinary.com/demo/image/upload/w_${size}/${id} ${size}w`).join(', ');
 ```
 
