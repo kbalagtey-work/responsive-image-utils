@@ -6,6 +6,7 @@ import {
 	getRetinaSizes,
 	getMaxNumOfSizes,
 	getImgSizeStrings,
+	getSizesWithInterval,
 } from 'responsive-image-utils';
 
 const generateImage = (id, imgSizes, alt = '') => {
@@ -20,7 +21,7 @@ const generateImage = (id, imgSizes, alt = '') => {
 	const srcsetSizes = getSrcsetSizes(imgSizes, mediaQueries);
 	const srcsetSizesWithRetina = getRetinaSizes(srcsetSizes, 2, 3);
 	const defaultSrc = `https://res.cloudinary.com/demo/image/upload/w_${srcsetSizes[0]}/${id}`;
-	const srcsetURLs = getMaxNumOfSizes(srcsetSizesWithRetina, 5)
+	const srcsetURLs = getMaxNumOfSizes(getSizesWithInterval(srcsetSizesWithRetina, 150), 7)
 		.map(size => `https://res.cloudinary.com/demo/image/upload/w_${size}/${id} ${size}w`);
 	const sizesStr = getImgSizeStrings(imgSizes, mediaQueries).join(', ');
 
