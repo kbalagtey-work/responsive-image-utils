@@ -35,7 +35,7 @@ let exampleImage = generateImage('turtles.jpg', {s: '50vw', l: '25vw'});
 `exampleImage` will be a string with the following output
 
 ```js
-<img src="https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg 480w, https://res.cloudinary.com/demo/image/upload/w_640/turtles.jpg 640w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1440/turtles.jpg 1440w, https://res.cloudinary.com/demo/image/upload/w_1920/turtles.jpg 1920w" sizes="(min-width:1025px) 25vw, 50vw" alt="" />
+<img src="https://res.cloudinary.com/demo/image/upload/w_256/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_256/turtles.jpg 256w, https://res.cloudinary.com/demo/image/upload/w_512/turtles.jpg 512w, https://res.cloudinary.com/demo/image/upload/w_768/turtles.jpg 768w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1280/turtles.jpg 1280w, https://res.cloudinary.com/demo/image/upload/w_1536/turtles.jpg 1536w, https://res.cloudinary.com/demo/image/upload/w_3072/turtles.jpg 3072w" sizes="(min-width:1025px) 20vw, 100vw" alt="">
 ```
 
 ### Step by step example
@@ -105,7 +105,7 @@ const srcsetURLs = srcsetSizesWithRetina.map(size => `https://res.cloudinary.com
 
 Using the code snippet above, your `<img />` tag will like this
 ```js
-<img src="https://res.cloudinary.com/demo/image/upload/w_320/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_320/turtles.jpg 320w, https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg 480w, https://res.cloudinary.com/demo/image/upload/w_512/turtles.jpg 512w, https://res.cloudinary.com/demo/image/upload/w_640/turtles.jpg 640w, https://res.cloudinary.com/demo/image/upload/w_960/turtles.jpg 960w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1280/turtles.jpg 1280w, https://res.cloudinary.com/demo/image/upload/w_1440/turtles.jpg 1440w, https://res.cloudinary.com/demo/image/upload/w_1536/turtles.jpg 1536w, https://res.cloudinary.com/demo/image/upload/w_1920/turtles.jpg 1920w" alt="" />
+<img src="https://res.cloudinary.com/demo/image/upload/w_320/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_320/turtles.jpg 320w, https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg 480w, https://res.cloudinary.com/demo/image/upload/w_512/turtles.jpg 512w, https://res.cloudinary.com/demo/image/upload/w_640/turtles.jpg 640w, https://res.cloudinary.com/demo/image/upload/w_960/turtles.jpg 960w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1280/turtles.jpg 1280w, https://res.cloudinary.com/demo/image/upload/w_1440/turtles.jpg 1440w, https://res.cloudinary.com/demo/image/upload/w_1536/turtles.jpg 1536w, https://res.cloudinary.com/demo/image/upload/w_1920/turtles.jpg 1920w" />
 ```
 
 ### Is there a way to limit the results?
@@ -124,13 +124,13 @@ You can also use *getMaxNumOfSizes* which will take N results from the set if yo
 ```js
 const srcsetSizes = getSrcsetSizes(mySizes, mediaQueries);
 // generate 2x and 3x and limit results to 5
-const srcsetSizesWithRetina = getMaxNumOfSizes(getSizesWithInterval(getRetinaSizes(srcsetSizes, 2, 3), 20), 5);
+const srcsetSizesWithRetina = getMaxNumOfSizes(getSizesWithInterval(getRetinaSizes(srcsetSizes, 2, 3), 20), 7);
 const srcsetURLs = srcsetSizesWithRetina.map(size => `https://res.cloudinary.com/demo/image/upload/w_${size}/${id} ${size}w`).join(', ');
 ```
 
 Using the code snippet above, your `<img />` tag will like this
 ```js
-<img src="https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_480/turtles.jpg 480w, https://res.cloudinary.com/demo/image/upload/w_640/turtles.jpg 640w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1440/turtles.jpg 1440w, https://res.cloudinary.com/demo/image/upload/w_1920/turtles.jpg 1920w" alt="" />
+<img src="https://res.cloudinary.com/demo/image/upload/w_256/turtles.jpg" srcset="https://res.cloudinary.com/demo/image/upload/w_256/turtles.jpg 256w, https://res.cloudinary.com/demo/image/upload/w_512/turtles.jpg 512w, https://res.cloudinary.com/demo/image/upload/w_768/turtles.jpg 768w, https://res.cloudinary.com/demo/image/upload/w_1024/turtles.jpg 1024w, https://res.cloudinary.com/demo/image/upload/w_1280/turtles.jpg 1280w, https://res.cloudinary.com/demo/image/upload/w_1536/turtles.jpg 1536w, https://res.cloudinary.com/demo/image/upload/w_3072/turtles.jpg 3072w">
 ```
 
 ### Autogenerate the size attribute
