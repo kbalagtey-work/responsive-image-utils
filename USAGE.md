@@ -170,5 +170,5 @@ const sizesStr = getImgSizeStrings({s: '50vw' l: '25vw'}, mediaQueries);
 ['(min-width:1025px) 25vw', '50vw']
 ```
 
-For more technical documentation, please visit https://kbalagtey-tacit.github.io/responsive-image-utils/
+For more technical documentation, please visit https://kbalagtey-work.github.io/responsive-image-utils/
 

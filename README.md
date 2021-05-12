@@ -3,10 +3,10 @@
 Utility functions to make it easier to work with auto generated responsive images for better performance optimised images.
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Greenkeeper badge](https://badges.greenkeeper.io/kbalagtey-tacit/responsive-image-utils.svg)](https://greenkeeper.io/)
-[![Travis](https://img.shields.io/travis/kbalagtey-tacit/responsive-image-utils.svg)](https://travis-ci.org/kbalagtey-tacit/responsive-image-utils)
-[![Coverage Status](https://coveralls.io/repos/github/kbalagtey-tacit/responsive-image-utils/badge.svg)](https://coveralls.io/github/kbalagtey-tacit/responsive-image-utils)
-[![Dev Dependencies](https://david-dm.org/kbalagtey-tacit/responsive-image-utils/dev-status.svg)](https://david-dm.org/kbalagtey-tacit/responsive-image-utils?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kbalagtey-work/responsive-image-utils.svg)](https://greenkeeper.io/)
+[![Travis](https://img.shields.io/travis/kbalagtey-work/responsive-image-utils.svg)](https://travis-ci.org/kbalagtey-work/responsive-image-utils)
+[![Coverage Status](https://coveralls.io/repos/github/kbalagtey-work/responsive-image-utils/badge.svg)](https://coveralls.io/github/kbalagtey-work/responsive-image-utils)
+[![Dev Dependencies](https://david-dm.org/kbalagtey-work/responsive-image-utils/dev-status.svg)](https://david-dm.org/kbalagtey-work/responsive-image-utils?type=dev)
 
 ### Overview
 Use this utility lib to generate image srcsets and sizes used for responsive web design using a mobile-first approach.
@@ -36,10 +36,10 @@ Add the following script tag to your project
 ES5 Demo - https://jsfiddle.net/ikanedo/8h7nz15g/
 
 ### More information
-[Want more information? Read the usage and step by step guide.](https://github.com/kbalagtey-tacit/responsive-image-utils/blob/master/USAGE.md)
+[Want more information? Read the usage and step by step guide.](https://github.com/kbalagtey-work/responsive-image-utils/blob/master/USAGE.md)
 
 ### TSDocs
-[Please visit the gh_pages for TSDocs.](https://kbalagtey-tacit.github.io/responsive-image-utils/)
+[Please visit the gh_pages for TSDocs.](https://kbalagtey-work.github.io/responsive-image-utils/)
 
 ### Contributions
-[Start contributing](https://github.com/kbalagtey-tacit/responsive-image-utils/blob/master/CONTRIBUTING.md). Contributions are open to all.
+[Start contributing](https://github.com/kbalagtey-work/responsive-image-utils/blob/master/CONTRIBUTING.md). Contributions are open to all.

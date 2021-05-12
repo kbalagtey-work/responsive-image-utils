@@ -16,10 +16,10 @@
   "files": [
     "dist"
   ],
-  "author": "Kane Balagtey <kbalagtey@tacitknowledge.com>",
+  "author": "Kane Balagtey <kane@goodfrontend.dev>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kbalagtey-tacit/responsive-image-utils.git"
+    "url": "https://github.com/kbalagtey-work/responsive-image-utils.git"
   },
   "license": "MIT",
   "engines": {
